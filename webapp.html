@@ -3,84 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cuub.</title>
+    <title>Mobile Web App</title>
     <style>
         body {
+            font-family: "Century Gothic", Arial, sans-serif;
+            background: #222;
+            color: white;
+            text-align: center;
             margin: 0;
             padding: 0;
-            background: linear-gradient(180deg, #1a1a1a, #2a2a2a);
-            color: white;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            text-align: center;
+            font-weight: bold;
         }
-        .container, .menu {
-            backdrop-filter: blur(20px);
-            background: rgba(255, 255, 255, 0.05);
+        .container {
+            padding: 20px;
+        }
+        .logo {
+            width: 150px;
+            height: auto;
+        }
+        .slogan {
+            font-size: 18px;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+        .card {
+            background: #333;
             border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            margin: 20px;
+            padding: 20px;
+            margin: 15px auto;
+            width: 80%;
+            max-width: 350px;
         }
-        h1, h4 {
-            margin: 0;
+        .icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 15px;
         }
-        img {
-            width: 157px;
-            height: 157px;
+        .name {
+            font-size: 20px;
+            font-weight: bold;
         }
-        p {
-            margin-top: 10px;
-            font-size: 1.1em;
-            opacity: 0.8;
+        .credits {
+            font-size: 14px;
+            color: #bbb;
+            font-weight: bold;
         }
-        .menu img {
-            width: 100px;
-            height: 100px;
-            margin: 10px;
+        .description {
+            font-size: 12px;
+            margin: 10px 0;
+            font-weight: bold;
         }
-        .buttons {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            margin-top: 10px;
-        }
-        .buttons button {
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
+        .button {
+            display: block;
+            background: url('https://cuub.us.to/resources/webapp/get.png') no-repeat center center;
+            background-size: cover;
+            padding: 15px;
+            border-radius: 15px;
+            text-decoration: none;
             color: white;
-            padding: 10px 20px;
-            border-radius: 10px;
-            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
         }
-        .buttons button:hover {
-            background: rgba(255, 255, 255, 0.2);
+        .team {
+            background: #444;
+            padding: 20px;
+            border-radius: 20px;
+            margin-top: 20px;
+        }
+        .team-title {
+            font-weight: bold;
+        }
+        .team-member {
+            display: inline-block;
+            text-align: center;
+            margin: 10px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>cuub.</h1>
-        <h4>cool ios trickery</h4>
-        <img src="https://cuub.us.to/cuub.png" alt="icon">
-        <p>Get the assistant right <a href="https://cuub.us.to/resources/CuubEssentials.zip" style="color: #4da6ff; text-decoration: none;">here</a>.</p>
-    </div>
-    
-    <div class="menu">
-        <h4>Credits</h4>
-        <div>
-            <img src="https://i.imgur.com/OuSPTsL.png" alt="Credit 1">
-            <img src="https://i.imgur.com/mVaD5KF.png" alt="Credit 2">
+        <img src="https://cuub.us.to/resources/webapp/logo.png" class="logo" alt="Logo">
+        <div class="we are the box everyone makes slogans about.">slogan.</div>
+
+        <div class="card">
+            <img src="https://cuub.us.to/resources/webapp/cuub.png" class="icon" alt="Icon">
+            <div class="DockPlay">name</div>
+            <div class="credits">credits</div>
+            <div class="description">description description description description description</div>
+            <a href="#" class="button">hyperlink button</a>
         </div>
-        <p>OnionJumoke and Folder.svg</p>
-        <div class="buttons">
-            <a href="https://x.com/onjmoke" style="background: rgba(255, 255, 255, 0.1); border: none; color: white; padding: 10px 20px; border-radius: 10px; cursor: pointer; text-decoration: none;">html guy</a>
-            <a href="https://x.com/CuubOniOS" style="background: rgba(255, 255, 255, 0.1); border: none; color: white; padding: 10px 20px; border-radius: 10px; cursor: pointer; text-decoration: none;">cuub (also support)</a>
-            <a href="https://x.com/Folder_svg" style="background: rgba(255, 255, 255, 0.1); border: none; color: white; padding: 10px 20px; border-radius: 10px; cursor: pointer; text-decoration: none;">custom icons and ui guy</a>
+
+        <div class="card">
+            <img src="https://cuub.us.to/resources/webapp/dockplay.png" class="icon" alt="Icon">
+            <div class="name">name</div>
+            <div class="credits">credits</div>
+            <div class="description">description description description description description</div>
+            <a href="#" class="button">hyperlink button</a>
+        </div>
+
+        <div class="card">
+            <img src="icon3.png" class="icon" alt="Icon">
+            <div class="name">name</div>
+            <div class="credits">credits</div>
+            <div class="description">description description description description description</div>
+            <a href="#" class="button">hyperlink button</a>
+        </div>
+
+        <div class="team">
+            <div class="team-title">meet the team</div>
+            <div class="team-member">
+                <img src="https://cuub.us.to/resources/webapp/oj.png" class="icon" alt="Team Member">
+                <div class="@onionjmoke">name</div>
+            </div>
+            <div class="team-member">
+                <img src="https://cuub.us.to/resources/webapp/cuub_circle.png" class="icon" alt="Team Member">
+                <div class="@CuubOniOS">name</div>
+            </div>
+            <div class="team-member">
+                <img src="https://cuub.us.to/resources/webapp/folder.png" class="icon" alt="Team Member">
+                <div class="@folder_svg">name</div>
+            </div>
         </div>
     </div>
 </body>
