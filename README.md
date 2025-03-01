@@ -1,4 +1,4 @@
 # Cuub.
 The box everyone makes slogans about.
 ## Get the assistant here:
-https://cuub.us.to
+https://onionjumoke.github.io/cuub/
