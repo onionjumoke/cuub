@@ -1,4 +1,4 @@
 # Cuub.
-The box everyone makes slogans about.
+The box everyone thinks inisde of.
 ## Get the assistant here:
 https://cuub.xyz
