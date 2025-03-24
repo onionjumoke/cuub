@@ -9,267 +9,432 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
         }
-        
+
         body {
             background-color: #1a1a1a;
             color: #fff;
             overflow-x: hidden;
-            position: relative;
+            line-height: 1.5;
         }
-        
+
+        /* Top Section - Glassmorphic */
         .top-logo {
-            display: flex;
-            justify-content: center;
-            padding-top: 40px;
-            margin-bottom: 30px;
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.05), transparent);
         }
-        
+
         .logo {
-            height: 120px;
-            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+            height: 90px;
+            filter: blur(0.5px) drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
             animation: glow 3s ease-in-out infinite;
+            transition: transform 0.3s ease;
         }
-        
-        .container {
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .main-section {
+            max-width: 1200px;
+            margin: 0 auto 40px;
+            padding: 30px;
             display: flex;
-            min-height: calc(100vh - 190px);
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
-            position: relative;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            animation: fadeIn 1s ease-out;
+            transition: transform 0.3s ease;
         }
-        
+
+        .main-section:hover {
+            transform: translateY(-5px);
+        }
+
         .phone-section {
             flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
+            text-align: center;
         }
-        
+
+        .phone-mockup {
+            max-height: 65vh;
+            filter: drop-shadow(0 5px 20px rgba(65, 195, 255, 0.25));
+            animation: float 4s ease-in-out infinite;
+            transition: transform 0.3s ease;
+        }
+
+        .phone-mockup:hover {
+            transform: scale(1.02);
+        }
+
         .text-section {
             flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding-left: 50px;
+            padding: 0 40px;
         }
-        
-        .phone-mockup {
-            max-height: 80vh;
-            position: relative;
-            filter: drop-shadow(0 0 15px rgba(65, 195, 255, 0.3));
-            animation: float 6s ease-in-out infinite;
-        }
-        
+
         .heading {
-            font-size: 5rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-            background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(220,220,220,1) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: fadeIn 1s ease-out;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #fff;
+            animation: slideIn 1s ease-out;
         }
-        
-        .subheading-container {
-            margin-bottom: 30px;
-            animation: slideIn 1.2s ease-out;
-        }
-        
+
         .subheading {
-            font-size: 4rem;
-            font-weight: bold;
+            font-size: 2.5rem;
+            font-weight: 600;
             font-style: italic;
-            background: linear-gradient(90deg, #d4c39c 0%, #f0e0b2 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: inline-block;
-            animation: colorChange 10s infinite linear;
+            color: hsl(40, 100%, 80%);
+            animation: hueShift 10s infinite linear, slideIn 1.2s ease-out;
         }
-        
+
         .tagline {
-            font-size: 1.6rem;
-            margin-bottom: 40px;
+            font-size: 1.3rem;
             opacity: 0.9;
+            margin: 20px 0;
             animation: fadeIn 1.4s ease-out;
-            letter-spacing: 0.5px;
         }
-        
+
         .buttons {
             display: flex;
             gap: 15px;
-            margin-bottom: 50px;
             animation: fadeIn 1.6s ease-out;
         }
-        
+
         .btn {
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-decoration: none;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             transition: all 0.3s ease;
-            animation: pulse 2s infinite;
         }
-        
+
         .btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            transform: scale(1.1) rotate(5deg);
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
-        
+
         .btn img {
-            width: 24px;
-            height: 24px;
+            width: 28px;
+            height: 28px;
+        }
+
+        .middle-section {
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(to bottom, #010103, #04040d, #2c2d38, #343642);
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+        }
+
+        .middle-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            padding: 30px;
+            background: transparent;
+            border-radius: 25px;
+        }
+
+        .middle-images {
+            flex: 1;
+            display: flex;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .middle-images img {
+            width: 180px;
+            height: 120px;
+            object-fit: cover;
+            margin-right: 15px;
+            border-radius: 10px;
+            animation: slideImages 12s infinite ease-in-out;
+            transition: opacity 0.5s ease;
+        }
+
+        .middle-images img:hover {
+            opacity: 0.8;
+        }
+
+        .middle-text {
+            flex: 1;
+            padding-right: 40px;
+            text-align: right;
+            color: #fff;
+        }
+
+        .middle-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .middle-text p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+        }
+
+        .bottom-section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            animation: fadeIn 1s ease-out;
+            transition: transform 0.3s ease;
+        }
+
+        .bottom-section:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-container {
+            text-align: center;
+            position: relative;
+            height: 280px;
+            overflow: hidden;
+        }
+
+        .team-card-1 {
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(71, 92, 85, 0.25));
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: all 0.5s ease, transform 0.3s ease;
+            color: #fff;
+            text-align: center;
         }
         
-        .app-store {
-            animation-delay: 0s;
+        .team-card-2 {
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(11, 38, 66, 0.25));
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: all 0.5s ease, transform 0.3s ease;
+            color: #fff;
+            text-align: center;
         }
-        
-        .discord {
-            animation-delay: 0.3s;
+
+        .team-card-1.active,
+        .team-card-2.active {
+            opacity: 1;
         }
-        
-        .twitter {
-            animation-delay: 0.6s;
+
+        .team-card-1.left,
+        .team-card-2.left {
+            transform: translateX(-150%);
+            opacity: 0;
         }
-        
-        /* Animations */
-        @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-15px);
-            }
-            100% {
-                transform: translateY(0px);
-            }
+
+        .team-card-1.right,
+        .team-card-2.right {
+            transform: translateX(150%);
+            opacity: 0;
         }
-        
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2);
-            }
-            70% {
-                box-shadow: 0 0 0 5px rgba(255, 255, 255, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-            }
+
+        .team-card-1:hover,
+        .team-card-2:hover {
+            transform: translateX(-50%) scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
-        
+
+        .team-info h3 {
+            font-size: 1.6rem;
+            margin-bottom: 8px;
+        }
+
+        .team-info p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .team-pic {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .team-card-1:hover .team-pic,
+        .team-card-2:hover .team-pic {
+            transform: scale(1.1) rotate(3deg);
+        }
+
         @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        
+
         @keyframes slideIn {
-            0% {
-                opacity: 0;
-                transform: translateX(-20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateX(0);
-            }
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
         }
-        
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0); }
+        }
+
         @keyframes glow {
-            0% {
-                filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
-            }
-            50% {
-                filter: drop-shadow(0 0 20px rgba(10, 10, 10, 0.8));
-            }
-            100% {
-                filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
-            }
+            0% { filter: blur(0.5px) drop-shadow(0 0 5px rgba(255, 255, 255, 0.3)); }
+            50% { filter: blur(0.5px) drop-shadow(0 0 15px rgba(255, 255, 255, 0.5)); }
+            100% { filter: blur(0.5px) drop-shadow(0 0 5px rgba(255, 255, 255, 0.3)); }
         }
-        
-        @keyframes colorChange {
-            0% {
-                background: linear-gradient(90deg, #FAFAFA 0%, #e6e6e6 100%);
-                -webkit-background-clip: text;
-                background-clip: text;
+
+        @keyframes slideImages {
+            0% { transform: translateX(0); opacity: 1; }
+            80% { transform: translateX(-80%); opacity: 1; }
+            90% { opacity: 0; }
+            100% { transform: translateX(-100%); opacity: 0; }
+        }
+
+        @keyframes hueShift {
+            0% { color: hsl(40, 100%, 80%); }
+            33% { color: hsl(200, 100%, 80%); }
+            66% { color: hsl(300, 100%, 80%); }
+            100% { color: hsl(40, 100%, 80%); }
+        }
+
+        @media (max-width: 768px) {
+            .main-section, .middle-content {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
             }
-            20% {
-                background: linear-gradient(90deg, #d9d9d9 0%, #d9d9d9 100%);
-                -webkit-background-clip: text;
-                background-clip: text;
-            }
-            40% {
-                background: linear-gradient(90deg, #cccccc 0%, #cccccc 100%);
-                -webkit-background-clip: text;
-                background-clip: text;
-            }
-            60% {
-                background: linear-gradient(90deg, #cccccc 0%, #cccccc 100%);
-                -webkit-background-clip: text;
-                background-clip: text;
-            }
-            80% {
-                background: linear-gradient(90deg, #d9d9d9 0%, #d9d9d9 100%);
-                -webkit-background-clip: text;
-                background-clip: text;
-            }
-            100% {
-                background: linear-gradient(90deg, #FAFAFA 0%, #FAFAFA 100%);
-                -webkit-background-clip: text;
-                background-clip: text;
-            }
+
+            .text-section { padding: 20px 0; }
+            .heading { font-size: 2.5rem; }
+            .subheading { font-size: 1.8rem; }
+            .tagline { font-size: 1.1rem; }
+            .phone-mockup { max-height: 45vh; }
+            .middle-images img { width: 140px; height: 90px; }
+            .team-card-1, .team-card-2 { width: 240px; height: 240px; }
+            .middle-text { padding-right: 0; }
         }
     </style>
 </head>
 <body>
-    <!-- Top centered logo -->
     <div class="top-logo">
         <img src="https://onionjumoke.github.io/cuub/logo.png" alt="Cuub Logo" class="logo">
     </div>
-    
-    <div class="container">
-        <!-- Phone Section -->
+
+    <section class="main-section">
         <div class="phone-section">
             <img src="https://onionjumoke.github.io/cuub/webapp/phonething.png" alt="iPhone with Cuub Theme" class="phone-mockup">
         </div>
-        
-        <!-- Text Section -->
         <div class="text-section">
             <h1 class="heading">The box everyone</h1>
-            <div class="subheading-container">
-                <h2 class="subheading">thinks inside of.</h2>
-            </div>
+            <h2 class="subheading">thinks inside of.</h2>
             <p class="tagline">Theming & Tweaks for iOS 17+</p>
-            
             <div class="buttons">
-                <a href="https://onionjumoke.github.io/cuub/webapp.html" class="btn app-store">
+                <a href="https://onionjumoke.github.io/cuub/webapp.html" class="btn">
                     <img src="https://onionjumoke.github.io/cuub/homescreen.png" alt="Homescreen">
                 </a>
-                <a href="https://github.com/onionjumoke/cuub" class="btn discord">
-                    <img src="https://onionjumoke.github.io/cuub/github.png" alt="Discord">
+                <a href="https://github.com/onionjumoke/cuub" class="btn">
+                    <img src="https://onionjumoke.github.io/cuub/github.png" alt="GitHub">
                 </a>
-                    <a href="https://x.com/CuubOniOS" class="btn twitter">
+                <a href="https://x.com/CuubOniOS" class="btn">
                     <img src="https://onionjumoke.github.io/cuub/x.png" alt="Twitter">
                 </a>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section class="middle-section">
+        <div class="middle-content">
+            <div class="middle-images">
+                <img src="https://cuub.xyz/skeuoglass.png" alt="img1">
+                <img src="https://cuub.xyz/endroidclassic.png" alt="img2">
+                <img src="https://cuub.xyz/multitray.png" alt="img3">
+            </div>
+            <div class="middle-text">
+                <h2>A classic look.</h2>
+                <p>Preview some icons from our upcoming icon packs that will make your iPhone 13 years younger.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bottom-section">
+        <h2 style="text-align: center; margin-bottom: 25px; animation: fadeIn 1s ease-out;">Meet the Team</h2>
+        <div class="team-container">
+            <a href="https://x.com/onjmoke" class="team-card-1">
+                <img src="https://cuub.xyz/oj.png" alt="onion" class="team-pic">
+                <div class="team-info">
+                    <h3>OnionJumoke</h3>
+                    <p>Lead dev. That's it.</p>
+                </div>
+            </a>
+            <a href="https://x.com/folder_svg" class="team-card-2">
+                <img src="https://cuub.xyz/folder.png" alt="folder" class="team-pic">
+                <div class="team-info">
+                    <h3>folder.svg</h3>
+                    <p>Overall designer, contributed wallpapers and icon packs.</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <script>
+        const cards = document.querySelectorAll('.team-card-1, .team-card-2');
+        let current = 0;
+
+        function showCard(index) {
+            cards.forEach((card, i) => {
+                card.classList.remove('active', 'left', 'right');
+                if (i === index) {
+                    card.classList.add('active');
+                } else if (i < index) {
+                    card.classList.add('left');
+                } else {
+                    card.classList.add('right');
+                }
+            });
+        }
+
+        function nextCard() {
+            current = (current + 1) % cards.length;
+            showCard(current);
+        }
+
+        showCard(current);
+        setInterval(nextCard, 2500);
+    </script>
 </body>
 </html>

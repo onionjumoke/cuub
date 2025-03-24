@@ -3,325 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cuub - Theming & Tweaks for iOS 17+</title>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            if (window.innerWidth > 768) {
-                document.getElementById('redirectMessage').style.display = 'flex';
-                setTimeout(function() {
-                    window.location.href = 'https://onionjumoke.github.io/cuub/deskver.html';
-                }, 2000);
-            } else {
-                document.getElementById('mobileContent').style.display = 'block';
-            }
-        });
-
-        window.addEventListener('resize', function() {
-            if (window.innerWidth > 768 && document.getElementById('mobileContent').style.display === 'block') {
-                document.getElementById('mobileContent').style.display = 'none';
-                document.getElementById('redirectMessage').style.display = 'flex';
-                setTimeout(function() {
-                    window.location.href = 'https://onionjumoke.github.io/cuub/deskver.html';
-                }, 2000);
-            }
-        });
-    </script>
+    <title>Under Construction</title>
     <style>
-        * {
+        body {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        }
-        
-        body {
-            background-color: #1a1a1a;
-            color: #fff;
-            overflow-x: hidden;
-            position: relative;
-            height: 100vh;
-        }
-        
-        #redirectMessage {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-color: #1a1a1a;
-            z-index: 1000;
-            text-align: center;
-            padding: 20px;
-        }
-        
-        .redirect-logo {
-            height: 100px;
-            margin-bottom: 30px;
-            animation: glow 2s ease-in-out infinite;
-        }
-        
-        .redirect-text {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
-        
-        .loading-dots {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-        }
-        
-        .dot {
-            width: 12px;
-            height: 12px;
-            background-color: white;
-            border-radius: 50%;
-            animation: dot-pulse 1.4s infinite ease-in-out;
-        }
-        
-        .dot:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-        
-        .dot:nth-child(3) {
-            animation-delay: 0.4s;
-        }
-        
-        #mobileContent {
-            display: none;
-            height: 100%;
-        }
-        
-        .top-logo {
-            display: flex;
-            justify-content: center;
-            padding-top: 40px;
-            margin-bottom: 30px;
-        }
-        
-        .logo {
-            height: 120px;
-            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
-            animation: glow 3s ease-in-out infinite;
-        }
-        
-        .container {
-            display: flex;
-            flex-direction: column;
-            min-height: calc(100vh - 190px);
-            max-width: 100%;
-            margin: 0 auto;
-            padding: 20px;
-            position: relative;
-        }
-        
-        .phone-section {
+            min-height: 100vh;
+            background: #1a1a1a;
             display: flex;
             justify-content: center;
             align-items: center;
-            position: relative;
-            margin-bottom: 30px;
-        }
-        
-        .text-section {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
-        }
-        
-        .phone-mockup {
-            max-height: 40vh;
-            position: relative;
-            filter: drop-shadow(0 0 15px rgba(65, 195, 255, 0.3));
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        .heading {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-            background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(220,220,220,1) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: fadeIn 1s ease-out;
-        }
-        
-        .subheading-container {
-            margin-bottom: 20px;
-            animation: slideIn 1.2s ease-out;
-        }
-        
-        .subheading {
-            font-size: 2rem;
-            font-weight: bold;
-            font-style: italic;
-            background: linear-gradient(90deg, #d4c39c 0%, #f0e0b2 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            display: inline-block;
-            animation: colorChange 10s infinite linear;
-        }
-        
-        .tagline {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-            animation: fadeIn 1.4s ease-out;
-            letter-spacing: 0.5px;
-        }
-        
-        .buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 40px;
-            animation: fadeIn 1.6s ease-out;
-        }
-        
-        .btn {
-            width: 40px;
-            height: 40px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-            animation: pulse 2s infinite;
-        }
-        
-        @supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
-            .btn {
-                backdrop-filter: blur(10px);
-                -webkit-backdrop-filter: blur(10px);
-            }
-        }
-        
-        .btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-        }
-        
-        .btn img {
-            width: 24px;
-            height: 24px;
-        }
-        
-        .app-store {
-            animation-delay: 0s;
-        }
-        
-        .discord {
-            animation-delay: 0.3s;
-        }
-        
-        .twitter {
-            animation-delay: 0.6s;
-        }
-        
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
-        
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2); }
-            70% { box-shadow: 0 0 0 5px rgba(255, 255, 255, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
-        }
-        
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-        
-        @keyframes slideIn {
-            0% { opacity: 0; transform: translateX(-20px); }
-            100% { opacity: 1; transform: translateX(0); }
-        }
-        
-        @keyframes glow {
-            0% { filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5)); }
-            50% { filter: drop-shadow(0 0 20px rgba(10, 10, 10, 0.8)); }
-            100% { filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5)); }
-        }
-        
-        @keyframes colorChange {
-            0% { background: linear-gradient(90deg, #FAFAFA 0%, #e6e6e6 100%); -webkit-background-clip: text; background-clip: text; }
-            20% { background: linear-gradient(90deg, #d9d9d9 0%, #d9d9d9 100%); -webkit-background-clip: text; background-clip: text; }
-            40% { background: linear-gradient(90deg, #cccccc 0%, #cccccc 100%); -webkit-background-clip: text; background-clip: text; }
-            60% { background: linear-gradient(90deg, #cccccc 0%, #cccccc 100%); -webkit-background-clip: text; background-clip: text; }
-            80% { background: linear-gradient(90deg, #d9d9d9 0%, #d9d9d9 100%); -webkit-background-clip: text; background-clip: text; }
-            100% { background: linear-gradient(90deg, #FAFAFA 0%, #FAFAFA 100%); -webkit-background-clip: text; background-clip: text; }
-        }
-        
-        @keyframes dot-pulse {
-            0% { transform: scale(0.8); opacity: 0.5; }
-            50% { transform: scale(1.2); opacity: 1; }
-            100% { transform: scale(0.8); opacity: 0.5; }
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
-        @media (max-height: 640px) {
-            .top-logo { padding-top: 20px; margin-bottom: 15px; }
-            .logo { height: 80px; }
-            .phone-mockup { max-height: 35vh; }
-            .heading { font-size: 2rem; }
-            .subheading { font-size: 1.6rem; }
-            .tagline { font-size: 1rem; margin-bottom: 20px; }
+        .window {
+            position: relative;
+            width: 400px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .window:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .content {
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: 600;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
 <body>
-    <div id="redirectMessage">
-        <img src="https://onionjumoke.github.io/cuub/logo.png" alt="Cuub Logo" class="redirect-logo">
-        <p class="redirect-text">Redirecting to desktop version...</p>
-        <div class="loading-dots">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-        </div>
-    </div>
-
-    <div id="mobileContent">
-        <div class="top-logo">
-            <img src="https://onionjumoke.github.io/cuub/logo.png" alt="Cuub Logo" class="logo">
-        </div>
-        
-        <div class="container">
-            <div class="phone-section">
-                <img src="https://onionjumoke.github.io/cuub/webapp/phonething.png" alt="iPhone with Cuub Theme" class="phone-mockup">
-            </div>
-            
-            <div class="text-section">
-                <h1 class="heading">The box everyone</h1>
-                <div class="subheading-container">
-                    <h2 class="subheading">thinks inside of.</h2>
-                </div>
-                <p class="tagline">Theming & Tweaks for iOS 17+</p>
-                
-                <div class="buttons">
-                    <a href="https://onionjumoke.github.io/cuub/webapp.html" class="btn app-store">
-                        <img src="https://onionjumoke.github.io/cuub/homescreen.png" alt="Homescreen">
-                    </a>
-                    <a href="https://github.com/onionjumoke/cuub" class="btn discord">
-                        <img src="https://onionjumoke.github.io/cuub/github.png" alt="Discord">
-                    </a>
-                    <a href="https://x.com/CuubOniOS" class="btn twitter">
-                        <img src="https://onionjumoke.github.io/cuub/x.png" alt="Twitter">
-                    </a>
-                </div>
-            </div>
-        </div>
+    <div class="window">
+        <div class="content">Under Construction. :P</div>
     </div>
 </body>
 </html>
